@@ -1,0 +1,56 @@
+/* paragraph styles */
+body{
+    background: url("images/img.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+p.nav_my{
+    color:chocolate;
+    font-size: 30px;
+    font-family: Tahoma;
+}
+/* div tag syles */
+div{
+    background-color:aqua; 
+    border: 2px solid black;
+}
+h3{
+    font-size: 25px;
+    color: blue;
+    text-align: center;
+}
+.form_one{
+    width: 500px;
+    background: linear-gradient(rgb(13, 158, 202),rgb(31, 230, 97),green);
+}
+footer{
+    background-color: rgb(46, 44, 43);
+}
+.btn_1{
+    background-color: rgb(255, 89, 117);
+    border-radius: 2px;
+    font-size: 9px;
+}
+.btn_2{
+    background-color: chocolate;
+    border: 1px solid black;
+    font-size: 15px;
+}
+.succes{
+    font-size: 30px;
+    align-items: center;
+}
+.div_1{
+    margin: auto;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+}
+.img_1{
+    margin-left: 350px;
+    margin-top: 80px;
+}

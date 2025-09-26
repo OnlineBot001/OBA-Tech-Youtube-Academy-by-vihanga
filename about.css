@@ -1,0 +1,303 @@
+@import url('https://fonts.googleleapis.com/css2?family=jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Jost",serif;
+    min-height: 100vh;
+    background: url(images/img.jpg) 
+    center center/cover;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: transparent;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+.navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+    max-width: 1600px;
+}
+.navbar-logo{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.navbar-container .navbar-menu{
+    display: flex;
+    text-align: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+.navbar-container .navbar-menu li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.7s ease;
+    white-space: nowrap;
+}
+.navbar-container .navbar-menu li a:hover,
+.navbar-container .navbar-menu li a.acive{
+    color: rgb(1, 247, 255);
+    background: rgba(212, 70, 255, 0.8);
+    border: 2px solid #fff;
+}
+.navbar-toggle{
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+.bar{
+    display: none;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+}
+/* Responsive style */
+@media (max-width: 880px) {
+    .navbar{
+        backdrop-filter: none;
+    }
+    .navbar-container .navbar-menu{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem !important;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+    .navbar-container .navbar-menu.active{
+        display: flex;
+    }
+    .navbar-toggle{
+        display: block;
+        z-index: 999;
+    }
+    .navbar-toggle.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .navbar-toggle.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .navbar-toggle.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+@media (max-width: 480px){
+    .navbar-container{
+        padding: 0 1rem;
+    }
+
+    .navbar-logo{
+        font-size: 1.7rem;
+    }
+
+    .navbar-container .navbar-menu li a{
+        font-size: 1.2rem;
+        padding: 3px 15px;
+    }
+    
+}
+/* over */
+
+
+
+
+
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+    padding-top: 15px;
+}
+p{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+}
+.btn {
+  margin: 100px;
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  color: #FFF;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+}
+.btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+/* glow */
+.btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+/* hover */
+.btn:hover::before {
+  opacity: 1;
+}
+.btn:active:after {
+  background: transparent;
+}
+.btn:active {
+  color: #000;
+  font-weight: bold;
+}
+
+
+
+/* glow paragraph */
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
+.card {
+    --border-radius: 1rem;
+    --bg-color: #393e41;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background: var(--bg-color);
+    border-radius: var(--border-radius);
+    color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+}
+
+.card::before {
+    width: 200%;
+    height: 200%;
+    background-image: conic-gradient(var(--color) 0deg,
+            transparent 60deg, transparent 180deg, var(--color) 180deg,
+            transparent 240deg);
+    inset: -50%;
+    z-index: -2;
+    animation: borderanimation 4s linear infinite;
+}
+
+.card:hover::before {
+    animation-play-state: paused;
+}
+
+@keyframes borderanimation {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.card::after {
+    --inset: 4px;
+    background: #111;
+    inset: var(--inset);
+    border-radius: calc(var(--border-radius) - var(--inset));
+    z-index: -1;
+    transition: all 0.3s linear;
+}
+
+.card:hover::after {
+    background: var(--bg-color);
+}
+
+.card i {
+    font-size: 3.5rem;
+    color: transparent;
+    -webkit-text-stroke: thin var(--color);
+}
+
+.card:hover i {
+    color: var(--color);
+    -webkit-text-stroke-width: 0;
+}
+
+.card .title {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-block: 2.5rem 1.5rem;
+    color: var(--color);
+}
+
+.card .description {
+    line-height: 1.5rem;
+    text-align: center;
+    opacity: 0.75;
+}
